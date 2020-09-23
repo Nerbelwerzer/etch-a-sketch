@@ -1,16 +1,20 @@
 const container = document.querySelector("#container");
 const clearButton = document.querySelector("#clear");
-const pixels = document.querySelectorAll('.pixel');
-const sizeSelect = document.querySelector('select')
+const sizeSelect = document.querySelector('select');
+const rainbowButton = document.querySelector('#rainbowButton');
 let lastSize;
+let rainbow = 0;
 
-createGrid(50); 
+createGrid(50);
 
 sizeSelect.addEventListener('change', (e) => (
     createGrid(e.target.value)
 ));
 clearButton.addEventListener('click', () => {
     createGrid(lastSize)
+});
+rainbowButton.addEventListener('click', () => {
+    rainbowFunction();
 });
 function createGrid(gridSize) {
     lastSize = gridSize;
@@ -23,7 +27,23 @@ function createGrid(gridSize) {
         pixel.addEventListener('mouseover', fill);
     }
 }
+function rainbowFunction() {
+    if (rainbow == 1) {
+        rainbow = 0;
+        rainbowButton.setAttribute('class', 'rainbow-off')
+    }
+    else {
+        rainbow = 1;
+        rainbowButton.setAttribute('class', 'rainbow-on')
+    }
+}
 function fill() {
-    this.style.backgroundColor = 'black';
-    this.style.borderColor = 'black'
+    if (rainbow == 0) {
+        this.style.backgroundColor = 'black';
+        this.style.borderColor = 'black'
+    }
+    else {
+        this.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16)
+        this.style.border = 'none'
+    }
 }

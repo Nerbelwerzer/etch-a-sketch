@@ -5,19 +5,25 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <main>
-        <div id="controls">
-            <button id="clear">Clear canvas</button></div>
-        <select>
-            <option value="20">20x20</option>
-            <option selected="selected" value="50">50x50</option>
-            <option value="100">100x100</option>
-        </select>
         <div id="container"></div>
-        <script src = "scripts.js"> </script>
+        <div id="controls">
+            <div id="clear-div">
+                <button id="clear">Clear canvas</button>
+            </div>
+            <div id='rainbow-div'>
+                <button class='rainbow-off' id="rainbowButton"></button>
+            </div>
+            <div id="select-div"><select>
+                    <option value="25">25x25</option>
+                    <option selected="selected" value="50">50x50</option>
+                    <option value="75">75x75</option>
+                    <option value="100">100x100</option>
+                </select>
+            </div>
+        </div>
+        <script src="scripts.js"> </script>
     </main>
 </body>
-
 </html>
