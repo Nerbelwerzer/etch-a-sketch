@@ -43,7 +43,7 @@ function fill() {
         this.style.borderColor = 'black'
     }
     else {
-        this.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16)
+        this.style.backgroundColor = "#" + Math.floor(Math.random() * 0xFFFFFF).toString(16)
         this.style.border = 'none'
     }
 }
